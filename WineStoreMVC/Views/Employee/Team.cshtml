@@ -1,0 +1,25 @@
+﻿@model IEnumerable<WineStoreMVC.Models.Employee_Table>
+
+@{
+    ViewBag.Title = "Team";
+}
+
+<div class="container">
+    <div class="row">
+        <h1 align="center"> Team Member of Store </h1>
+        @foreach (var item in Model)
+        {
+        <div class="col-md-4">
+            <img src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg" class="img-thumbnail" />
+            <h1 class="btn btn-warning">@Html.DisplayFor(modelItem => item.Name)</h1>
+            <hr />
+            <h3 class="btn btn-danger">@Html.DisplayFor(modelItem => item.Designation)</h3>
+        </div>
+        }
+
+
+    </div>
+
+</div>
+
+

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WineStoreMVC.Models.Sale_Data>
+
+@{
+    ViewBag.Title = "SaleDetail";
+}
+
+
+<h1> All Sale Details </h1>
+<p>
+    @Html.ActionLink("Sale New Record", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bill)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuyDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bill)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuyDate)
+        </td>
+        <td>
+            <h1 class="btn btn-warning">@Html.ActionLink("Edit", "Edit", new { id = item.id }) </h1></td>
+            <td>
+                <h1 class="btn btn-success">@Html.ActionLink("Delete", "Delete", new { id = item.id })</h1>
+</td>
+    </tr>
+}
+
+</table>
+
+<a href="@Url.Action("AdminBLock","Admin")" style="font-size:30px">ROll Back</a>

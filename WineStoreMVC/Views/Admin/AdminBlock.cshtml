@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "AdminBlock";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 align="Center">Welcome to the Admin Block</h1>
+
+            <h2><a href="@Url.Action("AllEmployee","Employee")">Employee Pannel </a></h2>
+
+            <h2><a href="@Url.Action("PurchaseDetail","Purchase")">Purchase Pannel </a></h2>
+
+            <h2><a href="@Url.Action("SaleDetail","Sale")">Sale Pannel </a></h2>
+
+            <h2><a href="@Url.Action("AllMessages","Home")">Query Pannel </a></h2>
+
+            <a href="@Url.Action("Index","Home")" style="font-size:30px;">Roll Back</a>
+        </div>
+    </div>
+</div>

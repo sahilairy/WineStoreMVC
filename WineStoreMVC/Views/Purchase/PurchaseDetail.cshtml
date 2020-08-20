@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WineStoreMVC.Models.Purchase_Data>
+
+@{
+    ViewBag.Title = "PurchaseDetail";
+}
+
+
+
+<p>
+    @Html.ActionLink("Buy New Product", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Company)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PurchaseDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Company)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PurchaseDate)
+        </td>
+        <td>
+            <h1 class="btn btn-warning">@Html.ActionLink("Edit", "Edit", new { id = item.id }) </h1></td>
+        <td>
+            <h1 class="btn btn-danger">@Html.ActionLink("Delete", "Delete", new { id = item.id })</h1></td>
+    </tr>
+}
+
+</table>
+
+<h1> <a href="@Url.Action("AdminBLock","Admin")" style="font-size:30px;">Roll Back</a></h1>

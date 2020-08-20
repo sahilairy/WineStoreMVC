@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WineStoreMVC.Models.Contact_Data>
+
+@{
+    ViewBag.Title = "AllMessages";
+}
+
+<h2>All Messages</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            <h1 class="btn btn-warning"> @Html.ActionLink("Delete", "Delete", new { id = item.ID })</h1>
+        </td>
+    </tr>
+}
+
+</table>
+
+<a href="@Url.Action("AdminBLock","Admin")" style="font-size:30px;">Roll Back</a>

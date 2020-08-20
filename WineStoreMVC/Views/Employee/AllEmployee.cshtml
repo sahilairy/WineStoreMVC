@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WineStoreMVC.Models.Employee_Table>
+
+@{
+    ViewBag.Title = "AllEmployee";
+}
+
+<h2>AllEmployee</h2>
+
+<p>
+    @Html.ActionLink("Add New Empoyee", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Designation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            <h1 class="btn btn-warning">@Html.ActionLink("Edit", "Edit", new { id = item.id }) </h1></td>
+           <td>
+               <h1 class="btn btn-success">@Html.ActionLink("Delete", "Delete", new { id = item.id })</h1>
+        </td>
+    </tr>
+}
+
+</table>
+
+<a href="@Url.Action("AdminBlock","Admin")" style="font-size:30px;"> Roll Back</a>
+
